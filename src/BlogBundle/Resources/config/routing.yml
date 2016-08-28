@@ -1,0 +1,44 @@
+admin_post:
+    resource: "@BlogBundle/Resources/config/routing/post.yml"
+    prefix:   /admin/post
+
+home:
+    path:     /
+    defaults: { _controller: BlogBundle:Site:index }
+
+index:
+    path:     /index
+    defaults: { _controller: BlogBundle:Site:index }
+
+show:
+    path:     /show
+    defaults: { _controller: BlogBundle:Site:show }
+
+admin:
+    path:     /admin
+    defaults: { _controller: BlogBundle:Admin:index }
+
+admin_author_index:
+    path:     /admin/author/
+    defaults: { _controller: "BlogBundle:Author:index" }
+    methods:  GET
+
+admin_author_show:
+    path:     /admin/author/{id}/show
+    defaults: { _controller: "BlogBundle:Author:show" }
+    methods:  GET
+
+admin_author_new:
+    path:     /admin/author/new
+    defaults: { _controller: "BlogBundle:Author:new" }
+    methods:  [GET, POST]
+
+admin_author_edit:
+    path:     /admin/author/{id}/edit
+    defaults: { _controller: "BlogBundle:Author:edit" }
+    methods:  [GET, POST]
+
+admin_author_delete:
+    path:     /admin/author/{id}/delete
+    defaults: { _controller: "BlogBundle:Author:delete" }
+    methods:  DELETE
